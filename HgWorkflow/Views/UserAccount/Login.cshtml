@@ -28,6 +28,7 @@
             @Html.EditorFor(model => model.Password, new { htmlAttributes = new { Placeholder = "Password", @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
 
+
             <input type="submit" value="Login" class="btn btn-default" style="background-color:#004785;color:#ffffff" />
             <div>
                 @Html.ActionLink("Create an account", "Register")
