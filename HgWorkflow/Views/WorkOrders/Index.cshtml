@@ -1,0 +1,141 @@
+﻿@model IEnumerable<HgWorkflow.Models.WorkOrder>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkOrderId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoldSmithName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerMobileNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JewelleryDescription1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JewelleryDescription2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JewelleryDescription3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkToBeDone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkToBeDone2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkToBeDone3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AgentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductGivenOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateProposed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateAcceptedOrRejected)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductToBeReturnedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AmountToBeCollected)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AmountEstimate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkOrderId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoldSmithName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerMobileNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JewelleryDescription1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JewelleryDescription2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JewelleryDescription3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkToBeDone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkToBeDone2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkToBeDone3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AgentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductGivenOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateProposed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateAcceptedOrRejected)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductToBeReturnedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AmountToBeCollected)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AmountEstimate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
