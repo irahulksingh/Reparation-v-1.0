@@ -93,7 +93,7 @@ namespace HgWorkflow.Controllers
         {
             if (Session["UserId"] != null)
             {
-                return View("~/Views/WorkOrders/Create.cshtml");
+                return View("~/Views/WorkOrders/Index.cshtml");
             }
             else
             {

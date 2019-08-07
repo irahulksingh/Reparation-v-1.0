@@ -6,12 +6,25 @@
     margin: auto;
 }
 
+.list-page {
+    width: 800px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+
+
+.create-page {
+    width: 100%;
+    padding: 2% 0 0;
+    margin: auto;
+}
+
 .form {
     position: relative;
     z-index: 1;
     background: #FFFFFF;
-    max-width: 860px;
-    margin: 0 auto 100px;
+    max-width: 80%;
+    margin: 0 auto 200px;
     padding: 45px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -104,12 +117,13 @@
             }
 
 body {
-    background: #76b852; /* fallback for old browsers */
-    background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+    /*background: #76b852;*/ /* fallback for old browsers */
+    background: #007293;
+    /*background: -webkit-linear-gradient(right, #76b852, #8DC26F);
     background: -moz-linear-gradient(right, #76b852, #8DC26F);
     background: -o-linear-gradient(right, #76b852, #8DC26F);
     background: linear-gradient(to left, #76b852, #8DC26F);
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: grayscale;*/
 }
