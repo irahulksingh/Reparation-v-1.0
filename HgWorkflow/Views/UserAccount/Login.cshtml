@@ -1,47 +1,44 @@
 ﻿@model HgWorkflow.Models.UserAccount
 
 @{
-                /**/
-
-                ViewBag.Title = "Login";
+     ViewBag.Title = "Login";
 }
 
-<link href="~/Content/NewStyle.css" rel="stylesheet" />
+
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
-
-<div class="login-page">
-    <div class="form">
-        <img src="~/images/logo.png" height="50", width="45"/>
-        <h4>Login</h4>
-        <hr />
-
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-
-            @Html.EditorFor(model => model.Anummer, new { htmlAttributes = new { Placeholder = "Anstallningsnummmer", @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Anummer, "", new { @class = "text-danger" })
-
-            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { Placeholder = "Password", @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-
-
-            <input type="submit" value="Login" class="btn btn-default" style="background-color:#004785;color:#ffffff" />
-            <div>
-                @Html.ActionLink("Create an account", "Register")
-            </div>
-        </div>
-        </div>
-
-        </div>
+    <div class="login-page">
+        <div class="form">
+            <form class="login-page">
+                             <img src="~/images/logo.png" width="50", height="50" />
+                                <h4>Login</h4>
+                                <hr />
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                               
+                                        @Html.EditorFor(model => model.Anummer, new { htmlAttributes = new {Placeholder="User Name" , @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Anummer, "", new { @class = "text-danger" })
+                                  
+                                
+                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new {Placeholder = "Password", @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                    
+                              
+                      
+                                        <input type="submit" value="Create" class="btn btn-default" style="background-color:#004785;color:#ffffff" />
+                                 
+                                        <div>
+                                            @Html.ActionLink("Create new user", "Register")
+                                        </div>
+                        </form>
+                    </div>
+                </div>
   
-          }
+}
 
-    
 
-    @section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-    }
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

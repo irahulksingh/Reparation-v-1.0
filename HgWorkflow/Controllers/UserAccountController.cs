@@ -29,18 +29,33 @@ namespace HgWorkflow.Controllers
         [HttpPost]
         public ActionResult Register(UserAccount account)
         {
-            if(ModelState.IsValid)
-            {
-                using (OurDbContext db = new OurDbContext())
-                {
-                    db.userAccounts.Add(account);
-                    db.SaveChanges();   
-                }
-                ModelState.Clear();
-                ViewBag.Message = account.FullName + " " + "hass been successfully registered";
 
+            using (OurDbContext db = new OurDbContext())
+            {
+
+                var UserStatus = db.userAccounts.FirstOrDefault(u => u.Anummer == account.Anummer);
+
+                if(UserStatus != null)
+
+                {
+
+                    ViewBag.message = account.Anummer + " " + "already exists, Contact Administrator. ";
+                }
+                else if (ModelState.IsValid)
+                {
+                    //using (OurDbContext db = new OurDbContext())
+                    {
+                        db.userAccounts.Add(account);
+                        db.SaveChanges();
+                    }
+                    ModelState.Clear();
+                    ViewBag.Message = account.FullName + " " + "has been successfully registered";
+
+                }
+                
+                return View();
             }
-            return View();
+            
         }
 
 
