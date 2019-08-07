@@ -39,7 +39,15 @@ namespace HgWorkflow.Controllers
         // GET: WorkOrders/Create
         public ActionResult Create()
         {
-            return View();
+            if (Session["UserId"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return View("../UserAccount/Login");
+            }
+            
         }
 
         // POST: WorkOrders/Create
@@ -49,14 +57,15 @@ namespace HgWorkflow.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,WorkOrderId,GoldSmithName,CustomerName,CustomerMobileNumber,CustomerEmail,JewelleryDescription1,JewelleryDescription2,JewelleryDescription3,WorkToBeDone,WorkToBeDone2,WorkToBeDone3,AgentName,ProductGivenOn,DateProposed,DateAcceptedOrRejected,ProductToBeReturnedOn,AmountToBeCollected,AmountEstimate,Status")] WorkOrder workOrder)
         {
-            if (ModelState.IsValid)
-            {
-                db.workOrders.Add(workOrder);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
+               if (ModelState.IsValid)
+                {
+                    db.workOrders.Add(workOrder);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            
             return View(workOrder);
+
         }
 
         // GET: WorkOrders/Edit/5
