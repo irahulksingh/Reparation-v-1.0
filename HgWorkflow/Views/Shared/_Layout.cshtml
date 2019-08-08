@@ -24,20 +24,23 @@
                     {
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li>@Html.ActionLink("WorkOrders", "Index", "WorkOrders")</li>
-                                <li>@Html.ActionLink("New WorkOrder", "Create", "WorkOrders")</li>
+                                <li>@Html.ActionLink("All work-orders", "Index", "WorkOrders")</li>
+                                <li>@Html.ActionLink("New work-order", "Create", "WorkOrders")</li>
                                 @*<li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
                                 <li>@Html.ActionLink("Logout", "Logout", "UserAccount")</li>
                             </ul>
                         </div>
+
                     }
                 </div>
-   
-    
+    @if(Session["UserId"] != null)
+    {
+        <div class ="alert-success">Welcome <b>@Session["FullName"]</b></div>
+    }
         @RenderBody()
-
+    <hr />
         
-            <footer>
+            <footer class="text-center">
                 <p>&copy; @DateTime.Now.Year</p>
             </footer>
         

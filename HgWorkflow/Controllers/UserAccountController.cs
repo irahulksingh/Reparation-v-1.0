@@ -73,10 +73,10 @@ namespace HgWorkflow.Controllers
                 var UserLoggingIn = db.userAccounts.FirstOrDefault(u => u.Anummer == user.Anummer && u.Password == user.Password);
                 if (UserLoggingIn != null)
                 {
-                    Session["UserId"] = user.UserId.ToString();
-                    //Session["FullName"] = user.FullName.ToString();
-                    Session["Anummer"] = user.Anummer.ToString();
-                    //Session["ButikId"] = user.ButikId.ToString();
+                    Session["UserId"] = UserLoggingIn.UserId.ToString();
+                    Session["FullName"] = UserLoggingIn.FullName.ToString();
+                    Session["Anummer"] = UserLoggingIn.Anummer.ToString();
+                    Session["ButikId"] = UserLoggingIn.ButikId.ToString();
 
                     return RedirectToAction("LoggedIn");
                 }
@@ -93,7 +93,7 @@ namespace HgWorkflow.Controllers
         {
             if (Session["UserId"] != null)
             {
-                return View("~/Views/WorkOrders/Index.cshtml");
+                return RedirectToAction("Index", "WorkOrders");
             }
             else
             {

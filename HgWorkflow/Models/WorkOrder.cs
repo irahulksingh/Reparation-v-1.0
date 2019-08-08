@@ -11,8 +11,8 @@ namespace HgWorkflow.Models
         [Key]
         public int Id { get; set; }
 
-        public int WorkOrderId { get; set; }
-
+        public string WorkOrderId { get; set; }
+        
         public string GoldSmithName { get; set; }
 
         public string CustomerName { get; set; }

@@ -7,19 +7,20 @@
 }
 
 .list-page {
-    width: 800px;
-    padding: 8% 0 0;
-    margin: auto;
-}
-
-
-.create-page {
     width: 100%;
     padding: 2% 0 0;
     margin: auto;
 }
 
+
+.create-page {
+    width: 60%;
+    padding: 2% 0 0;
+    margin: auto;
+}
+
 .form {
+    font-family: "Roboto", sans-serif;
     position: relative;
     z-index: 1;
     background: #FFFFFF;

@@ -1,0 +1,106 @@
+﻿@model HgWorkflow.Models.WorkOrder
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+<div class="create-page">
+    <div class="form">
+        @*<form class="form">*@
+        <h4>WorkOrder</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="col-lg-6">
+
+            @Html.EditorFor(model => model.WorkOrderId, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.WorkOrderId, "", new { @class = "text-danger" })
+
+
+            @Html.EditorFor(model => model.GoldSmithName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.GoldSmithName, "", new { @class = "text-danger" })
+
+            @Html.EditorFor(model => model.CustomerName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
+
+        </div>
+        <div class="col-lg-6">
+            @Html.EditorFor(model => model.CustomerMobileNumber, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.CustomerMobileNumber, "", new { @class = "text-danger" })
+
+            @Html.EditorFor(model => model.CustomerEmail, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.CustomerEmail, "", new { @class = "text-danger" })
+
+            @Html.EditorFor(model => model.JewelleryDescription1, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.JewelleryDescription1, "", new { @class = "text-danger" })
+
+            @Html.EditorFor(model => model.JewelleryDescription2, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.JewelleryDescription2, "", new { @class = "text-danger" })
+
+
+            @Html.EditorFor(model => model.JewelleryDescription3, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.JewelleryDescription3, "", new { @class = "text-danger" })
+
+            @Html.EditorFor(model => model.WorkToBeDone, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.WorkToBeDone, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-lg-6">
+            @Html.EditorFor(model => model.WorkToBeDone2, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.WorkToBeDone2, "", new { @class = "text-danger" })
+
+            @Html.EditorFor(model => model.WorkToBeDone3, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.WorkToBeDone3, "", new { @class = "text-danger" })
+        </div>
+
+        @Html.EditorFor(model => model.AgentName, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.AgentName, "", new { @class = "text-danger" })
+
+        @Html.EditorFor(model => model.ProductGivenOn, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.ProductGivenOn, "", new { @class = "text-danger" })
+
+        @Html.EditorFor(model => model.DateProposed, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.DateProposed, "", new { @class = "text-danger" })
+
+        @Html.EditorFor(model => model.DateAcceptedOrRejected, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.DateAcceptedOrRejected, "", new { @class = "text-danger" })
+
+        @Html.EditorFor(model => model.ProductToBeReturnedOn, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.ProductToBeReturnedOn, "", new { @class = "text-danger" })
+
+        @Html.EditorFor(model => model.AmountToBeCollected, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.AmountToBeCollected, "", new { @class = "text-danger" })
+
+        @Html.EditorFor(model => model.AmountEstimate, new { htmlAttributes = new { @class = "form-control" } })
+
+        @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+
+
+        <input type="submit" value="Create" class="btn btn-default" />
+
+    </div>
+    </div>
+             
+      
+
+                           
+                
+           
+     
+                    }
+
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
