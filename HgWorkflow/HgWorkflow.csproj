@@ -141,6 +141,10 @@
     <Compile Include="Migrations\201908052227214_SecondMig.Designer.cs">
       <DependentUpon>201908052227214_SecondMig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908082114077_SessionChanges.cs" />
+    <Compile Include="Migrations\201908082114077_SessionChanges.Designer.cs">
+      <DependentUpon>201908082114077_SessionChanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\UserAccount.cs" />
     <Compile Include="Models\WorkOrder.cs" />
@@ -215,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908052227214_SecondMig.resx">
       <DependentUpon>201908052227214_SecondMig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908082114077_SessionChanges.resx">
+      <DependentUpon>201908082114077_SessionChanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

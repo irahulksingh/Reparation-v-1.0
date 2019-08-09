@@ -13,8 +13,14 @@
 }
 
 
+@media print {
+    .not-printable, .not-printable * {
+        display: none !important;
+    }
+}
+
 .create-page {
-    width: 60%;
+    width: 80%;
     padding: 2% 0 0;
     margin: auto;
 }

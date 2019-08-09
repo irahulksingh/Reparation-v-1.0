@@ -68,6 +68,7 @@ namespace HgWorkflow.Controllers
 
                if (ModelState.IsValid)
                 {
+                            
                     db.workOrders.Add(workOrder);
                     db.SaveChanges();
                     return RedirectToAction("Index");
