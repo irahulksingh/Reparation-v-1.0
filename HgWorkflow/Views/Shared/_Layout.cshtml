@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title -Hallbergs-Workorder</title>
+    <title class="not-printable">@ViewBag.Title -Hallbergs-Workorder</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link href="~/Content/NewStyle.css" rel="stylesheet" />
 </head>
 <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top not-printable">
         @*<div class="container">
             @*<div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -22,7 +22,7 @@
             </div>*@
         @if (Session["UserId"] != null)
         {
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse not-printable">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("All work-orders", "Index", "WorkOrders")</li>
                     <li>@Html.ActionLink("New work-order", "Create", "WorkOrders")</li>
@@ -42,8 +42,8 @@
     @RenderBody()
     <hr />
 
-    <footer class="text-center">
-        <p>&copy; @DateTime.Now.Year</p>
+    <footer class="text-center not-printable">
+        <p>ikraftorG AB. for HallBergs Guld &copy; @DateTime.Now.Year</p>
     </footer>
 
 

@@ -16,10 +16,26 @@ namespace HgWorkflow.Controllers
         private OurDbContext db = new OurDbContext();
 
         // GET: WorkOrders
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
             if (Session["UserId"] != null)
             {
+                var workordersearch = from wo in db.workOrders
+                           select wo;
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    workordersearch = workordersearch.Where(wo => wo.CustomerMobileNumber.Contains(searchString)
+                                           || wo.WorkOrderId.Contains(searchString));
+
+                                            return View(workordersearch.ToList());
+                    //}
+                    //else
+                    //{
+                    //    ModelState.AddModelError("", "No records found.");
+                    //}
+
+                }
+            
                 return View(db.workOrders.ToList());
             }
             else
@@ -63,7 +79,7 @@ namespace HgWorkflow.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,WorkOrderId,GoldSmithName,CustomerName,CustomerMobileNumber,CustomerEmail,JewelleryDescription1,JewelleryDescription2,JewelleryDescription3,WorkToBeDone,WorkToBeDone2,WorkToBeDone3,AgentName,ProductGivenOn,DateProposed,DateAcceptedOrRejected,ProductToBeReturnedOn,AmountToBeCollected,AmountEstimate,Status")] WorkOrder workOrder)
+        public ActionResult Create([Bind(Include = "Id,WorkOrderId,GoldSmithName,CustomerName,CustomerMobileNumber,CustomerEmail,JewelleryDescription1,JewelleryDescription2,JewelleryDescription3,WorkToBeDone,WorkToBeDone2,WorkToBeDone3,AgentName,ProductGivenOn,DateProposed,DateAcceptedOrRejected,ProductToBeReturnedOn,AmountToBeCollected,AmountEstimate,Status,Comments")] WorkOrder workOrder)
         {
 
                if (ModelState.IsValid)
@@ -98,7 +114,7 @@ namespace HgWorkflow.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,WorkOrderId,GoldSmithName,CustomerName,CustomerMobileNumber,CustomerEmail,JewelleryDescription1,JewelleryDescription2,JewelleryDescription3,WorkToBeDone,WorkToBeDone2,WorkToBeDone3,AgentName,ProductGivenOn,DateProposed,DateAcceptedOrRejected,ProductToBeReturnedOn,AmountToBeCollected,AmountEstimate,Status")] WorkOrder workOrder)
+        public ActionResult Edit([Bind(Include = "Id,WorkOrderId,GoldSmithName,CustomerName,CustomerMobileNumber,CustomerEmail,JewelleryDescription1,JewelleryDescription2,JewelleryDescription3,WorkToBeDone,WorkToBeDone2,WorkToBeDone3,AgentName,ProductGivenOn,DateProposed,DateAcceptedOrRejected,ProductToBeReturnedOn,AmountToBeCollected,AmountEstimate,Status,Comments")] WorkOrder workOrder)
         {
             if (ModelState.IsValid)
             {

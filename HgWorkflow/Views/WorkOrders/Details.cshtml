@@ -1,29 +1,31 @@
 ﻿@model HgWorkflow.Models.WorkOrder
 
-@{
-    ViewBag.Title = "Details";
-}
-
+<div class="not-printable">
+    @{
+        ViewBag.Title = "Details";
+    }
+</div>
 <link href="~/Content/NewStyle.css" rel="stylesheet" />
 
-<div class="create-page">
-    <div class="form">
-        <form class="create-page">
-            <div>
+<div class="print-page">
+    <div class="formput">
+        <form class="print-page">
+            
                 <img src="~/Images/logo.png" width="50",height="50"/>
-                <h4>Created - Work-Order</h4>
-                <hr />
+                <h4>Work-order</h4>
+                
                 <dl class="dl-horizontal">
+
                     <dt>
                         @Html.DisplayNameFor(model => model.WorkOrderId)
                     </dt>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.WorkOrderId)
+                    <dd class="left"><b>
+    @Html.DisplayFor(model => model.WorkOrderId)
+</b>
                     </dd>
 
-
-                    <dt>
+                                    <dt>
                         @Html.DisplayNameFor(model => model.CustomerName)
                     </dt>
 
@@ -54,7 +56,13 @@
                     <dd>
                         @Html.DisplayFor(model => model.JewelleryDescription1)
                     </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.WorkToBeDone)
+                    </dt>
 
+                    <dd>
+                        @Html.DisplayFor(model => model.WorkToBeDone)
+                    </dd>
                     <dt>
                         @Html.DisplayNameFor(model => model.JewelleryDescription2)
                     </dt>
@@ -63,21 +71,6 @@
                         @Html.DisplayFor(model => model.JewelleryDescription2)
                     </dd>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.JewelleryDescription3)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.JewelleryDescription3)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.WorkToBeDone)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.WorkToBeDone)
-                    </dd>
 
                     <dt>
                         @Html.DisplayNameFor(model => model.WorkToBeDone2)
@@ -86,6 +79,15 @@
                     <dd>
                         @Html.DisplayFor(model => model.WorkToBeDone2)
                     </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.JewelleryDescription3)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.JewelleryDescription3)
+                    </dd>
+
+
 
                     <dt>
                         @Html.DisplayNameFor(model => model.WorkToBeDone3)
@@ -93,14 +95,6 @@
 
                     <dd>
                         @Html.DisplayFor(model => model.WorkToBeDone3)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.AgentName)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.AgentName)
                     </dd>
 
                     <dt>
@@ -112,37 +106,12 @@
                     </dd>
 
                     <dt>
-                        @Html.DisplayNameFor(model => model.DateProposed)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.DateProposed)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.DateAcceptedOrRejected)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.DateAcceptedOrRejected)
-                    </dd>
-
-                    <dt>
                         @Html.DisplayNameFor(model => model.ProductToBeReturnedOn)
                     </dt>
 
                     <dd>
                         @Html.DisplayFor(model => model.ProductToBeReturnedOn)
                     </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.AmountToBeCollected)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.AmountToBeCollected)
-                    </dd>
-
                     <dt>
                         @Html.DisplayNameFor(model => model.AmountEstimate)
                     </dt>
@@ -160,6 +129,12 @@
                     </dd>
 
                 </dl>
+                <div>
+                    <span  class="pull-right"> ______________________________<br />
+                    Customer signature</span>
+                    <span class="pull-left"> ______________________________<br />
+                    Agent signature</span>
+                </div>
                 <div class="not-printable">
                     <p>
                         @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) ||
@@ -168,8 +143,7 @@
                         <a href="javascript:window.print()"><b>Print</b></a>
                     </p>
                 </div>
-            </div>
-            </form>
+                        </form>
             </div>
     </div>
 
