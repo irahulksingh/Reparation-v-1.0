@@ -7,16 +7,16 @@
 <div class="list-page">
     <div class="form">
         <div class="form-horizontal">
-            <p class="text-center text-info text-uppercase"><b>
-    @Html.ActionLink("Create new work-order", "Create")
+            <p class="text-center text-info"><b>
+    @Html.ActionLink("Skäpa ny Reparation", "Create")
 </b>
             </p>
             @using (Html.BeginForm())
             {
             <centre>
                 <p class="col-lg-12">
-                    Search by <b> Contact number/ Work-order no.</b>: @Html.TextBox("SearchString", "", new { @class = "form-control" })
-                    <input type="submit" value="Search" class="btn btn-default" style="background-color:#004785;color:#ffffff" />
+                    Sök på <b> Telefonnummer/ Reparationsnr</b>: @Html.TextBox("SearchString", "", new { @class = "form-control" })
+                    <input type="submit" value="Sök" class="btn btn-default" style="background-color:#004785;color:#ffffff" />
                 </p>
             </centre>
             }
@@ -24,25 +24,25 @@
 
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.WorkOrderId)
+                        @Html.Label("Reparationsnr")
                     </th>
 
                     <th>
-                        @Html.Label("Customer Name")
+                        @Html.Label("Kund Namn")
                     </th>
                     <th>
-                        @Html.Label("Contact Number")
+                        @Html.Label("Telefonnummer")
                     </th>
 
                     <th>
                         @Html.Label("Status")
                     </th>
                     <th>
-                        @Html.Label("Comments")
+                        @Html.Label("Anteckningar")
                     </th>
-                    <th>
-                        @Html.Label("Activity")
-                    </th>
+                    <th class="text-center">
+                        @Html.Label("Handling")
+                    </th >
                     <th></th>
                 </tr>
                 @if (Model == null)
@@ -72,10 +72,10 @@
                             @Html.DisplayFor(modelItem => item.Comments)
                         </td>
 
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) ||
-                            @Html.ActionLink("Details", "Details", new { id = item.Id }) ||
-                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        <td class="text-center">
+                            @Html.ActionLink("Redigera", "Edit", new { id = item.Id }) ||
+                            @Html.ActionLink("Detalj", "Details", new { id = item.Id }) ||
+                            @Html.ActionLink("Radera", "Delete", new { id = item.Id })
                         </td>
                     </tr>
                     }

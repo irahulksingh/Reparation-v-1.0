@@ -12,7 +12,7 @@
     
 <div class="login-page">
     <div class="form">
-        <h4>Create an account</h4>
+        <h4 class="text-center">Skapa ny användare</h4>
         <hr />
         @if (ViewBag.Message != null)
         {
@@ -25,26 +25,26 @@
             <div class="form-group">
 
 
-                @Html.EditorFor(model => model.Anummer, new { htmlAttributes = new {Placeholder ="Anstallningsnummmer", @class = "form-control" } })
+                @Html.EditorFor(model => model.Anummer, new { htmlAttributes = new {Placeholder ="Anställningsnummmer", @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Anummer, "", new { @class = "text-danger" })
 
-                @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { Placeholder="Name", @class = "form-control" } })
+                @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { Placeholder="Namn", @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
 
-                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { Placeholder ="Password", @class = "form-control" } })
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { Placeholder ="Lösenord", @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
 
-                @Html.EditorFor(model => model.confirmPassword, new { htmlAttributes = new { Placeholder ="Confirm Password", @class = "form-control" } })
+                @Html.EditorFor(model => model.confirmPassword, new { htmlAttributes = new { Placeholder ="Bekräfta Lösenord",@class="form-control" } })
                 @Html.ValidationMessageFor(model => model.confirmPassword, "", new { @class = "text-danger" })
 
-                @Html.EditorFor(model => model.ButikId, new { htmlAttributes = new { Placeholder ="Butik Id", @class = "form-control" } })
+                @Html.EditorFor(model => model.ButikId, new { htmlAttributes = new { Placeholder ="Butiksnummer ", @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ButikId, "", new { @class = "text-danger" })
 
 
 
-                <input type="submit" value="Create" class="btn btn-default" style="background-color:#004785;color:#ffffff"  />
+                <input type="submit" value="Skapa" class="btn btn-default" style="background-color:#004785;color:#ffffff"  />
                 <div class="text-center">
-                    @Html.ActionLink("Login", "Login")
+                    @Html.ActionLink("Inloggning", "Login")
                 </div>
             </div>
             </div>

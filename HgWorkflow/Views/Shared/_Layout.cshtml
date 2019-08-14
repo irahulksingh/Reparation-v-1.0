@@ -24,10 +24,10 @@
         {
             <div class="navbar-collapse collapse not-printable">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("All work-orders", "Index", "WorkOrders")</li>
-                    <li>@Html.ActionLink("New work-order", "Create", "WorkOrders")</li>
+                    <li>@Html.ActionLink("Reparationer", "Index", "WorkOrders")</li>
+                    <li>@Html.ActionLink("Ny Reparation", "Create", "WorkOrders")</li>
                     @*<li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
-                    <li>@Html.ActionLink("Logout", "Logout", "UserAccount")</li>
+                    <li>@Html.ActionLink("Logga ut", "Logout", "UserAccount")</li>
                 </ul>
             </div>
 
@@ -36,7 +36,7 @@
     @if (Session["UserId"] != null)
     {
         <div class=" not-printable">
-        <div class="alert-success">Welcome <b>@Session["FullName"]</b></div>
+        <div class="alert-success">Välkommen <b>@Session["Fullname"]</b></div>
         </div>
     }
     @RenderBody()

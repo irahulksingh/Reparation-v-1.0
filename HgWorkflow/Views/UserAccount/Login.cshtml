@@ -11,25 +11,25 @@
     @Html.AntiForgeryToken()
     <div class="login-page ">
         <div class="form">
-            <form class="login-page ">
+            <form class="login-page text-center">
                              <img src="~/images/logo.png" width="50", height="50" />
-                                <h4>Login</h4>
+                             <h4>Inloggning</h4>
                                 <hr />
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                
-                                        @Html.EditorFor(model => model.Anummer, new { htmlAttributes = new {Placeholder= "AnstallaningNummer", @class = "form-control" } })
+                                        @Html.EditorFor(model => model.Anummer, new { htmlAttributes = new {Placeholder= "Anställningsnummer", @class = "form-control" } })
                                         @Html.ValidationMessageFor(model => model.Anummer, "", new { @class = "text-danger" })
                                   
                                 
-                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new {Placeholder = "Password", @class = "form-control" } })
+                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new {Placeholder = "Lösenord", @class = "form-control" } })
                                         @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                                     
                               
                       
-                                        <input type="submit" value="Login" class="btn btn-default" style="background-color:#004785;color:#ffffff" />
+                                        <input type="submit" value="Logga in" class="btn btn-default" style="background-color:#004785;color:#ffffff" />
                                  
                                         <div class="text-center">
-                                            @Html.ActionLink("Create new user", "Register")
+                                            @Html.ActionLink("Skapa ny användare", "Register")
                                         </div>
                         </form>
                     </div>
